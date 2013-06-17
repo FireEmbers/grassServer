@@ -1,6 +1,6 @@
 #Resample, aspect and slope
 
-Resamples a 2D array with height data and computes aspect and slope, storing them in 2D arrays.
+Grass Gis server
 
 ##Usage
 
