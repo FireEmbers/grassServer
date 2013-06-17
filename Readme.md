@@ -1,10 +1,6 @@
-#Resample, aspect and slope
-
-Grass Gis server
+#Grass Gis server
 
 ##Usage
-
-
 
 `var grassServer = require('grassServer');
 
