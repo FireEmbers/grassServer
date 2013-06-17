@@ -14,8 +14,6 @@
     
     grassServer(N, E, S, W, rows, cols, getMaps );
     
-    
-    
     function getMaps(aspect, slope){
     
       console.log(aspect);
