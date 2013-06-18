@@ -30,13 +30,13 @@ function execMaps(ID, N, S, E, W, rows, cols, cb){
       console.log('stderr: ' + stderr);
     }
 
-    catAspect(ID, cb);
+    catAspect(ID, rows, cols, cb);
 
   }
 
 }
 
-function catAspect(ID, cb){
+function catAspect(ID, rows, cols, cb){
 
   var child;
 
@@ -55,14 +55,14 @@ function catAspect(ID, cb){
 
     else{
 
-      catSlope(ID, cb);
+      catSlope(ID, rows, cols, cb);
 
     }
 
   }
 }
 
-function catSlope(ID, cb){
+function catSlope(ID, rows, cols, cb){
 
   var child;
 
@@ -81,7 +81,7 @@ function catSlope(ID, cb){
 
     else{
 
-      cb(aspectData, slopeData);
+      cb(grassCatToArray(aspectData, rows, cols), grassCatToArray(slopeData, rows, cols));
 
       var rmString = 'cd /home/fsousa/src/crp/embers/grassServer; \
       rm srtm'+ ID + '_slope.grass; \
@@ -94,12 +94,30 @@ function catSlope(ID, cb){
 
         slopeData = stdout;
 
-          if (error !== null) {
-            console.log('exec error: ' + error);
-            console.log('stderr: ' + stderr);
-          }
+        if (error !== null) {
+          console.log('exec error: ' + error);
+          console.log('stderr: ' + stderr);
+        }
       }
     }
 
   }
+}
+
+function grassCatToArray(data, cols, rows) {
+
+  /*
+    receives grass file data in string format and returns a float array
+  */
+
+
+  //removes grass file header
+  var dataString = data.replace(/(.+?\n){6}/, '').match(/[\d.]+/g);
+
+  var array = Array(cols*rows);
+
+  for (var cell = 0; cell < cols * rows; cell++)
+    array[cell] = parseFloat(dataString[cell]);
+
+  return array;
 }

@@ -43,9 +43,9 @@ r.resamp.interp --overwrite input=croped_$7@PERMANENT output=resamp$7 method=bil
 r.slope.aspect --overwrite elevation=resamp$7@PERMANENT slope=srtm$7_slope aspect=srtm$7_aspect format=percent
 
 #print maps - dp=2 (2 decimal digits) null=0 (null values are printed as 0)
-r.out.ascii input=srtm$7_aspect@PERMANENT output=/home/fsousa/grassdata/srtm$7_aspect.grass dp=2 null=0
-r.out.ascii input=srtm$7_slope@PERMANENT output=/home/fsousa/grassdata/srtm$7_slope.grass dp=2 null=0
-r.out.ascii input=resamp$7@PERMANENT output=/home/fsousa/grassdata/srtm$7_height.grass dp=2 null=0
+r.out.ascii input=srtm$7_aspect@PERMANENT output=/home/fsousa/src/crp/embers/grassServer/srtm$7_aspect.grass dp=2 null=0
+r.out.ascii input=srtm$7_slope@PERMANENT output=/home/fsousa/src/crp/embers/grassServer/srtm$7_slope.grass dp=2 null=0
+r.out.ascii input=resamp$7@PERMANENT output=/home/fsousa/src/crp/embers/grassServer/srtm$7_height.grass dp=2 null=0
 
 
 #Remove maps
