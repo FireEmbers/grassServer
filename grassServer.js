@@ -5,15 +5,15 @@ var aspectData;
 var slopeData;
 
 
-module.exports = function(N, E, S, W, rows, cols, cb){
+module.exports = function(N, S, E, W, rows, cols, cb){
 
   var ID = Math.ceil(Math.random()*1000);
 
-  execMaps(ID, N, E, S, W, rows, cols, cb);
+  execMaps(ID, N, S, E, W, rows, cols, cb);
 
 };
 
-function execMaps(ID, N, E, S, W, rows, cols, cb){
+function execMaps(ID, N, S, E, W, rows, cols, cb){
 
 
   var execString = 'cd /home/fsousa/grassdata; \

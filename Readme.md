@@ -12,7 +12,7 @@
     var rows = 100;
     var cols = 100;`
     
-    grassServer(N, E, S, W, rows, cols, getMaps );
+    grassServer(N, S, E, W, rows, cols, getMaps );
     
     
     

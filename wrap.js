@@ -8,4 +8,4 @@ var W = 2821740.2990220916;
 var rows = 100;
 var cols = 100;
 
-grassServer(N, E, S, W, rows, cols, function(aspect, slope){console.log(aspect,slope)} );
+grassServer(N, S, E, W, rows, cols, function(aspect, slope){console.log(aspect,slope)} );
