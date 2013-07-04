@@ -33,8 +33,12 @@ function execMaps(ID, N, S, E, W, rows, cols, cb){
     catAspect(ID, rows, cols, cb);
 
   }
-
 }
+
+var catOptions = { 
+    encoding: 'utf8',
+    maxBuffer: 3/*megas*/*1024*1024
+};
 
 function catAspect(ID, rows, cols, cb){
 
@@ -42,7 +46,7 @@ function catAspect(ID, rows, cols, cb){
 
   var execString = 'cd /home/fsousa/src/crp/embers/grassServer; cat srtm'+ ID + '_aspect.grass';
 
-  child = exec(execString, onCat);
+  child = exec(execString, catOptions ,onCat);
 
   function onCat(error, stdout, stderr){
 
@@ -68,7 +72,7 @@ function catSlope(ID, rows, cols, cb){
 
   var execString = 'cd /home/fsousa/src/crp/embers/grassServer; cat srtm'+ ID + '_slope.grass';
 
-  child = exec(execString, onCat);
+  child = exec(execString, catOptions, onCat);
 
   function onCat(error, stdout, stderr){
 
