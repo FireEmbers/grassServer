@@ -1,6 +1,6 @@
 #Grass Gis server
 
-This modules uses a bash script to access Grass Gis srtm maps for the Embers project. We have an express app using the grass client (see Usage> grass express app), receiving arguments in the request body and sending the aspect and slope arrays in with the response.send method. See
+This module uses a bash script to access Grass Gis srtm maps for the Embers project. We have an express app using the grass client (see Usage> grass client), receiving arguments in the request body and sending the aspect and slope arrays in with the response.send method. See
 [expressApp.js](https://github.com/FireEmbers/grassserver/blob/master/expressApp.js)
 
 ##Install
@@ -20,8 +20,8 @@ Launch the service with
 
 ### grass client
 
-This is the client which the grass server requires to reply to the grass client (not to be 
-confused with the first grass client, which although is a client, it's not the same client as the second client).
+This is the client which the grass server requires to reply to the [gis client](https://github.com/FireEmbers/gisclient) (not to be 
+confused with the first client, which although is a client, it's not the same client as the second client).
 
 var getClient = require('grassClient');
 
