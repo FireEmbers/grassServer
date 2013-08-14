@@ -6,7 +6,7 @@ This module uses a bash script to access Grass Gis srtm maps for the Embers proj
 ##Install
 
 ```
-npm install git://github.com:FireEmbers/grassserver.git
+npm install git://github.com/FireEmbers/grassserver.git
 ```
 
 ##Usage
