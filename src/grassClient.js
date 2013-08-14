@@ -16,8 +16,7 @@ module.exports = function(N, S, E, W, rows, cols, cb){
 function execMaps(ID, N, S, E, W, rows, cols, cb){
 
 
-  var execString = 'cd /home/fsousa/src/crp/embers/grassServer; \
-  ./grass_script.sh ' + N + ' ' + S + ' '+ E + ' ' + W + ' ' + rows + ' ' + cols + ' ' + ID;
+  var execString = 'cd src; ./grass_script.sh ' + N + ' ' + S + ' '+ E + ' ' + W + ' ' + rows + ' ' + cols + ' ' + ID;
 
   var child = exec(execString, onMapCreate);
 
@@ -44,7 +43,7 @@ function catAspect(ID, rows, cols, cb){
 
   var child;
 
-  var execString = 'cd /home/fsousa/src/crp/embers/grassServer; cat srtm'+ ID + '_aspect.grass';
+  var execString = 'cd ./src; cat srtm'+ ID + '_aspect.grass';
 
   child = exec(execString, catOptions ,onCat);
 
@@ -70,7 +69,7 @@ function catSlope(ID, rows, cols, cb){
 
   var child;
 
-  var execString = 'cd /home/fsousa/src/crp/embers/grassServer; cat srtm'+ ID + '_slope.grass';
+  var execString = 'cd ./src; cat srtm'+ ID + '_slope.grass';
 
   child = exec(execString, catOptions, onCat);
 
@@ -87,7 +86,7 @@ function catSlope(ID, rows, cols, cb){
 
       cb(grassCatToArray(aspectData, rows, cols), grassCatToArray(slopeData, rows, cols));
 
-      var rmString = 'cd /home/fsousa/src/crp/embers/grassServer; \
+      var rmString = 'cd ./src; \
       rm srtm'+ ID + '_slope.grass; \
       rm srtm'+ ID + '_aspect.grass; \
       rm srtm'+ ID + '_height.grass';

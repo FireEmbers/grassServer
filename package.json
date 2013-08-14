@@ -1,0 +1,32 @@
+{
+  "name": "grassServer",
+  "version": "0.1.0",
+  "description": "Grass Gis server ",
+  "main": "expressApp.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FireEmbers/grassServer.git"
+  },
+  "keywords": [
+    "grass",
+    "gis",
+    "embers",
+    "fireembers"
+  ],
+  "author": "Flávio Sousa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FireEmbers/grassServer/issues"
+  },
+  "dependencies": {
+    "util": "~0.4.9",
+    "embersutils": "git://github.com/FireEmbers/utils.git",
+    "express": "~3.3.5"
+  }
+}
