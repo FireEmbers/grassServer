@@ -23,6 +23,7 @@ Launch the service with
 This is the client which the grass server requires to reply to the [gis client](https://github.com/FireEmbers/gisclient) (not to be 
 confused with the first client, which although is a client, it's not the same client as the second client).
 
+```
 var getClient = require('grassClient');
 
 var N = 2257553.502315194;
@@ -42,4 +43,5 @@ function getMaps(aspect, slope){
   console.log(slope);
 
 }
+```
 
