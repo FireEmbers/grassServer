@@ -9,12 +9,12 @@ app.configure(function(){
 
 app.post('/grassdata', function(req, res){
 
-  var N = req.body.north;
-  var S = req.body.south;
-  var E = req.body.east;
-  var W = req.body.west;
-  var rows = req.body.r;
-  var cols = req.body.c;
+  var N =    parseFloat(req.body.north);
+  var S =    parseFloat(req.body.south);
+  var E =    parseFloat(req.body.east);
+  var W =    parseFloat(req.body.west);
+  var rows = parseFloat(req.body.r);
+  var cols = parseFloat(req.body.c);
 
   grassClient(N, S, E, W, rows, cols, cb);
 
