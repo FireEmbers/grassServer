@@ -2,7 +2,8 @@
   "name": "grassServer",
   "version": "0.1.0",
   "description": "Grass Gis server ",
-  "main": "expressApp.js",
+  "main": "grassServer.js",
+  "bin": "grassServer.js",
   "directories": {
     "example": "example"
   },

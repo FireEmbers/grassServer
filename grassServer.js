@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var grassClient = require('./src/grassClient');
 
 var express = require('express');
