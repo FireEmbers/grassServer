@@ -15,8 +15,9 @@ module.exports = function(N, S, E, W, rows, cols, cb){
 
 function execMaps(ID, N, S, E, W, rows, cols, cb){
 
+  var srcDir = __dirname;
 
-  var execString = 'cd src; ./grass_script.sh ' + N + ' ' + S + ' '+ E + ' ' + W + ' ' + rows + ' ' + cols + ' ' + ID;
+  var execString = 'cd '+ srcDir +'; ./grass_script.sh ' + N + ' ' + S + ' '+ E + ' ' + W + ' ' + rows + ' ' + cols + ' ' + ID;
 
   var child = exec(execString, onMapCreate);
 
