@@ -4,6 +4,7 @@ var exec = require('child_process').exec;
 var aspectData;
 var slopeData;
 
+var srcDir = __dirname;
 
 module.exports = function(N, S, E, W, rows, cols, cb){
 
@@ -14,8 +15,6 @@ module.exports = function(N, S, E, W, rows, cols, cb){
 };
 
 function execMaps(ID, N, S, E, W, rows, cols, cb){
-
-  var srcDir = __dirname;
 
   var execString = 'cd '+ srcDir +'; ./grass_script.sh ' + N + ' ' + S + ' '+ E + ' ' + W + ' ' + rows + ' ' + cols + ' ' + ID;
 
@@ -44,7 +43,7 @@ function catAspect(ID, rows, cols, cb){
 
   var child;
 
-  var execString = 'cd ./src; cat srtm'+ ID + '_aspect.grass';
+  var execString = 'cd '+ srcDir +'; cat srtm'+ ID + '_aspect.grass';
 
   child = exec(execString, catOptions ,onCat);
 
