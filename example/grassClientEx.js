@@ -1,5 +1,6 @@
 var grassClient = require('./../src/grassClient');
 var write2D = require('embersutils').write2D;
+var path = require('path');
 
 var N = 2257553.502315194;
 var S = 2255553.502315194;
@@ -10,6 +11,6 @@ var rows = 100;
 var cols = 100;
 
 grassClient(N, S, E, W, rows, cols, function(aspect, slope){
-  write2D(aspect, rows, cols, 'aspect.map');
-  write2D(slope, rows, cols, 'slope.map');
+  write2D(aspect, rows, cols, path.join(__dirname,'aspect.map'));
+  write2D(slope, rows, cols, path.join(__dirname,'slope.map'));
 });
