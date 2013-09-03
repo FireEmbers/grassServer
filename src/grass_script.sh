@@ -1,3 +1,5 @@
+#!/bin/bash
+su ubuntu
 #arguments:
 
 # $1 nort
