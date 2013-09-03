@@ -19,7 +19,7 @@ function execMaps(ID, N, S, E, W, rows, cols, cb){
 
   console.log(process.cwd());
 
-  var execString = 'cd '+ srcDir +'; ' + path.join(__dirname,'grass_script.sh')+ ' ' + N + ' ' + S + ' '+ E + ' ' + W + ' ' + rows + ' ' + cols + ' ' + ID;
+  var execString = 'cd '+ srcDir +'; sudo -u ubuntu ' + path.join(__dirname,'grass_script.sh')+ ' ' + N + ' ' + S + ' '+ E + ' ' + W + ' ' + rows + ' ' + cols + ' ' + ID;
 
   var child = exec(execString, onMapCreate);
 
