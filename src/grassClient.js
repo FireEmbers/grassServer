@@ -1,10 +1,11 @@
 var util = require('util');
 var exec = require('child_process').exec;
+var path = require('path');
 
 var aspectData;
 var slopeData;
 
-var srcDir = __dirname;
+var srcDir = path.join(__dirname);
 
 module.exports = function(N, S, E, W, rows, cols, cb){
 
@@ -16,7 +17,9 @@ module.exports = function(N, S, E, W, rows, cols, cb){
 
 function execMaps(ID, N, S, E, W, rows, cols, cb){
 
-  var execString = 'cd '+ srcDir +'; ./grass_script.sh ' + N + ' ' + S + ' '+ E + ' ' + W + ' ' + rows + ' ' + cols + ' ' + ID;
+  console.log(process.cwd());
+
+  var execString = 'cd '+ srcDir +'; ' + path.join(__dirname,'grass_script.sh')+ ' ' + N + ' ' + S + ' '+ E + ' ' + W + ' ' + rows + ' ' + cols + ' ' + ID;
 
   var child = exec(execString, onMapCreate);
 
@@ -69,7 +72,7 @@ function catSlope(ID, rows, cols, cb){
 
   var child;
 
-  var execString = 'cd ./src; cat srtm'+ ID + '_slope.grass';
+  var execString = 'cd ' + path.join(__dirname, 'src/')+ '; cat srtm'+ ID + '_slope.grass';
 
   child = exec(execString, catOptions, onCat);
 
@@ -86,7 +89,7 @@ function catSlope(ID, rows, cols, cb){
 
       cb(grassCatToArray(aspectData, rows, cols), grassCatToArray(slopeData, rows, cols));
 
-      var rmString = 'cd ./src; \
+      var rmString = 'cd ' + path.join(__dirname, './src') + '; \
       rm srtm'+ ID + '_slope.grass; \
       rm srtm'+ ID + '_aspect.grass; \
       rm srtm'+ ID + '_height.grass';

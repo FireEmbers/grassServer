@@ -19,7 +19,7 @@ export GIS_LOCK=$$
 
 # path to GRASS settings file
 #defines: location and map set among other things
-export GISRC=$HOME/.grassrc6
+export GISRC=/home/ubuntu/.grassrc6
 
 # The following three settings are only recommended if you will be calling
 # the script from another program - e.g. a PHP web page using system() or exec()
