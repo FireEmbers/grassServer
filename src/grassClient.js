@@ -72,7 +72,7 @@ function catSlope(ID, rows, cols, cb){
 
   var child;
 
-  var execString = 'cd ' + path.join(__dirname, 'src/')+ '; cat srtm'+ ID + '_slope.grass';
+  var execString = 'cd ' + srcDir + '; cat srtm'+ ID + '_slope.grass';
 
   child = exec(execString, catOptions, onCat);
 
@@ -89,7 +89,7 @@ function catSlope(ID, rows, cols, cb){
 
       cb(grassCatToArray(aspectData, rows, cols), grassCatToArray(slopeData, rows, cols));
 
-      var rmString = 'cd ' + path.join(__dirname, './src') + '; \
+      var rmString = 'cd ' + srcDir + '; \
       rm srtm'+ ID + '_slope.grass; \
       rm srtm'+ ID + '_aspect.grass; \
       rm srtm'+ ID + '_height.grass';
